@@ -1,0 +1,86 @@
+---Creación De La Base de Datos Prueba-----
+create database Prueba;
+
+---Creacion De Tabla Productos-----
+CREATE TABLE Productos (
+  idProducto INT IDENTITY(1, 1) PRIMARY KEY,
+  Producto VARCHAR(100)
+);
+
+select * from Productos;
+
+---Creacion De Tabla Facturas-----
+CREATE TABLE Facturas (
+  idFactura INT IDENTITY(1, 1) PRIMARY KEY,
+  NumeroFactura VARCHAR(50),
+  Fecha DATE,
+  TipodePago VARCHAR(50),
+  DocumentoCliente VARCHAR(50),
+  NombreCliente VARCHAR(100),
+  Subtotal DECIMAL(10, 2),
+  Descuento DECIMAL(10, 2),
+  IVA DECIMAL(10, 2),
+  TotalDescuento DECIMAL(10, 2),
+  TotalImpuesto DECIMAL(10, 2),
+  Total DECIMAL(10, 2)
+);
+
+select * from Facturas;
+
+---Creacion De Tabla Detalles-----
+CREATE TABLE Detalles (
+  idDetalle INT IDENTITY(1, 1) PRIMARY KEY,
+  idFactura INT,
+  idProducto INT,
+  Cantidad INT,
+  PrecioUnitario DECIMAL(10, 2),
+  FOREIGN KEY (idFactura) REFERENCES Facturas(idFactura),
+  FOREIGN KEY (idProducto) REFERENCES Productos(idProducto)
+);
+
+select * from Detalles;
+
+
+
+---Insersiones En Tabla Productos-----
+
+INSERT INTO Productos (Producto)VALUES ('Camisa');
+INSERT INTO Productos (Producto)VALUES ('Pantalon');
+INSERT INTO Productos (Producto)VALUES ('Zapatos');
+INSERT INTO Productos (Producto)VALUES ('Tenis');
+INSERT INTO Productos (Producto)VALUES ('Falda');
+INSERT INTO Productos (Producto)VALUES ('Blusa');
+
+
+---Insersiones En Tabla Facturas-----
+
+INSERT INTO Facturas(NumeroFactura, Fecha, TipodePago, DocumentoCliente, NombreCliente, Subtotal, Descuento, IVA, TotalDescuento, TotalImpuesto, Total)
+VALUES ('1001', '2018-12-09', 'Contado', '80225444', 'Juan Pérez', 100000.00, 0.00, 19.00, 0.00, 19000.00, 119000.00);
+
+INSERT INTO Facturas(NumeroFactura, Fecha, TipodePago, DocumentoCliente, NombreCliente, Subtotal, Descuento, IVA, TotalDescuento, TotalImpuesto, Total)
+VALUES ('1002', '2018-12-10', 'Credito', '80225777', 'Pedro Hernandez', 200000.00, 10.00, 19.00, 20000.00, 34200.00, 214200.00);
+
+INSERT INTO Facturas(NumeroFactura, Fecha, TipodePago, DocumentoCliente, NombreCliente, Subtotal, Descuento, IVA, TotalDescuento, TotalImpuesto, Total)
+VALUES ('1003', '2018-12-11', 'Contado', '80225666', 'Mario Duarte', 300000.00, 5.00, 19.00, 15000.00, 54150.00, 3391500.00);
+
+---Insersiones En Tabla Detalles-----
+
+
+INSERT INTO Detalles (idFactura, idProducto, Cantidad, PrecioUnitario)
+VAlUES(1,1,1,50000.00);
+
+INSERT INTO Detalles (idFactura, idProducto, Cantidad, PrecioUnitario)
+VAlUES(1,2,2,25000.00);
+
+INSERT INTO Detalles (idFactura, idProducto, Cantidad, PrecioUnitario)
+VAlUES(2,3,5,20000.00);
+
+INSERT INTO Detalles (idFactura, idProducto, Cantidad, PrecioUnitario)
+VAlUES(2,4,4,25000.00);
+
+INSERT INTO Detalles (idFactura, idProducto, Cantidad, PrecioUnitario)
+VAlUES(3,5,1,100000.00);
+
+INSERT INTO Detalles (idFactura, idProducto, Cantidad, PrecioUnitario)
+VAlUES(3,6,1,200000.00);
+
