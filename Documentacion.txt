@@ -1,0 +1,27 @@
+Prueba Java 
+
+El proyecto es un Sistema de Facturación que permite gestionar facturas y productos. A continuación, se presenta un resumen de las principales características y funcionalidades relacionadas con las facturas y productos.
+
+Facturas:
+
+La entidad principal del sistema es la Factura, que representa una transacción de compra o venta.
+Cada factura tiene los siguientes atributos: número de factura, fecha, tipo de pago, documento del cliente, nombre del cliente, subtotal, descuento, IVA, total descuento, total impuesto y total.
+El sistema permite agregar nuevas facturas y actualizar las existentes.
+Para agregar una factura, se deben proporcionar los datos correspondientes a cada atributo.
+Al actualizar una factura, se pueden modificar los atributos de la factura seleccionada.
+Se proporciona un formulario en el que se ingresan los datos de la factura, incluyendo validaciones para asegurar la correcta entrada de información.
+La lista de facturas se muestra en una tabla, donde se pueden ver todos los atributos de cada factura.
+Se implementa la funcionalidad de iterar sobre la lista de facturas y mostrar la información en la tabla.
+
+
+Productos:
+
+Los productos son elementos que se pueden incluir en una factura.
+Cada producto tiene los siguientes atributos: código, nombre, descripción, precio unitario y cantidad.
+El sistema permite gestionar los productos, agregar nuevos productos y actualizar los existentes.
+Para agregar un producto, se deben proporcionar los datos correspondientes a cada atributo.
+Al actualizar un producto, se pueden modificar los atributos del producto seleccionado.
+Se proporciona un formulario para ingresar los datos del producto, con validaciones para garantizar la correcta entrada de información.
+La lista de productos se muestra en una tabla, donde se pueden ver todos los atributos de cada producto.
+Los productos pueden asociarse a una factura, permitiendo incluirlos en la lista de productos de una factura específica.
+En resumen, el Sistema de Facturación ofrece la funcionalidad de gestionar facturas y productos. Permite agregar, actualizar y mostrar información relacionada con las facturas y los productos. El sistema proporciona formularios para ingresar los datos necesarios y muestra la información en tablas para una fácil visualización.
